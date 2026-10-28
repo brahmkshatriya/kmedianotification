@@ -1,0 +1,5 @@
+headers = kmedia_notification.h
+package = dev.brahmkshatriya.kmedianotification.interop
+staticLibraries = libkmedia_notification.a
+linkerOpts.linux = -lgio-2.0 -lgobject-2.0 -lglib-2.0
+linkerOpts.mingw = -lruntimeobject -lole32 -luser32 -luuid

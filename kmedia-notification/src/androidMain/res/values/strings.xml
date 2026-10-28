@@ -1,0 +1,11 @@
+<resources>
+    <string name="kmedia_like">Like</string>
+    <string name="kmedia_unlike">Unlike</string>
+    <string name="kmedia_stop">Stop</string>
+    <string name="kmedia_shuffle_off">Shuffle off</string>
+    <string name="kmedia_shuffle_on">Shuffle on</string>
+    <string name="kmedia_repeat_off">Repeat off</string>
+    <string name="kmedia_repeat_all">Repeat all</string>
+    <string name="kmedia_repeat_one">Repeat one</string>
+    <string name="kmedia_unavailable_button">%1$s (unavailable)</string>
+</resources>
