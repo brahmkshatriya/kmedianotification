@@ -7,4 +7,4 @@ pluginManagement {
 }
 dependencyResolutionManagement { repositories { google(); mavenCentral() } }
 rootProject.name = "KMediaNotification"
-include(":kmedia-notification")
+include(":lib")

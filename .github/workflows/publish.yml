@@ -83,22 +83,22 @@ jobs:
         run: cygpath -w /ucrt64/bin >> "$GITHUB_PATH"
       - name: Compile JVM native bridge
         shell: bash
-        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :kmedia-notification:compileJvmBridge
+        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :lib:compileJvmBridge
       - name: Build Kotlin/Native arm64 bridge
         if: matrix.id == 'linux-aarch64'
         shell: bash
-        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :kmedia-notification:archiveSystemMediaLinuxArm64
+        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :lib:archiveSystemMediaLinuxArm64
       - uses: actions/upload-artifact@v4
         with:
           name: kmedia-jvm-native-${{ matrix.id }}-${{ needs.prepare.outputs.version }}
-          path: kmedia-notification/build/generated/jvmNative/native/${{ matrix.id }}
+          path: lib/build/generated/jvmNative/native/${{ matrix.id }}
           if-no-files-found: error
           retention-days: 5
       - uses: actions/upload-artifact@v4
         if: matrix.id == 'linux-aarch64'
         with:
           name: kmedia-native-linux-arm64-${{ needs.prepare.outputs.version }}
-          path: kmedia-notification/build/native/system-media/linuxArm64/libkmedia_notification.a
+          path: lib/build/native/system-media/linuxArm64/libkmedia_notification.a
           if-no-files-found: error
           retention-days: 5
 
@@ -217,7 +217,7 @@ jobs:
             test -s "$KMEDIA_NOTIFICATION_LINUX_ARM64_PREBUILT_ARCHIVE"
           fi
           ./gradlew --no-daemon --stacktrace --no-configuration-cache \
-            ":kmedia-notification:publish${PUBLICATION}PublicationToReleaseShardRepository"
+            ":lib:publish${PUBLICATION}PublicationToReleaseShardRepository"
       - uses: actions/upload-artifact@v4
         with:
           name: kmedia-repo-${{ matrix.id }}-${{ needs.prepare.outputs.version }}
@@ -240,7 +240,7 @@ jobs:
       - name: Build root publication
         env:
           ORG_GRADLE_PROJECT_VERSION_NAME: ${{ needs.prepare.outputs.version }}
-        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :kmedia-notification:publishKotlinMultiplatformPublicationToReleaseShardRepository
+        run: ./gradlew --no-daemon --stacktrace --no-configuration-cache :lib:publishKotlinMultiplatformPublicationToReleaseShardRepository
       - uses: actions/upload-artifact@v4
         with:
           name: kmedia-repo-metadata-${{ needs.prepare.outputs.version }}

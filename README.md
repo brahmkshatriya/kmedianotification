@@ -1,6 +1,6 @@
 # KMediaNotification
 
-[![Maven Central](https://img.shields.io/maven-central/v/dev.brahmkshatriya.kmedianotification/kmedia-notification?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.brahmkshatriya.kmedianotification/kmedia-notification)
+[![Maven Central](https://img.shields.io/maven-central/v/dev.brahmkshatriya.kmedianotification/lib?label=Maven%20Central)](https://central.sonatype.com/artifact/dev.brahmkshatriya.kmedianotification/lib)
 [![Publish](https://github.com/brahmkshatriya/kmedianotification/actions/workflows/publish.yml/badge.svg)](https://github.com/brahmkshatriya/kmedianotification/actions/workflows/publish.yml)
 
 Kotlin Multiplatform media notifications and system playback controls for Android, iOS, macOS, Linux, Windows, JVM, JavaScript, and WasmJS.
@@ -13,7 +13,7 @@ Add `mavenCentral()` and `google()` to your dependency repositories, then use th
 
 ```kotlin
 commonMain.dependencies {
-    implementation("dev.brahmkshatriya.kmedianotification:kmedia-notification:<version>")
+    implementation("dev.brahmkshatriya.kmedianotification:lib:<version>")
 }
 ```
 

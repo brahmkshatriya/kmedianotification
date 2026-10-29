@@ -52,7 +52,7 @@ def validate_companions(pom: Path) -> None:
 
 
 def validate_targets(group_root: Path, version: str) -> None:
-    artifact = "kmedia-notification"
+    artifact = "lib"
     targets = (
         "android", "jvm", "js", "wasm-js", "linuxx64", "linuxarm64", "mingwx64",
         "macosx64", "macosarm64", "iosarm64", "iosx64", "iossimulatorarm64",
